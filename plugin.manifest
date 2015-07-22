@@ -1,0 +1,5 @@
+pluginclassname=StudipDownloader
+pluginname=StudipDownloader
+origin=data-quest
+version=1
+StudipMinVersion=3.1
