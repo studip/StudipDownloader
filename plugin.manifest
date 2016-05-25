@@ -1,5 +1,5 @@
 pluginclassname=StudipDownloader
 pluginname=StudipDownloader
-origin=data-quest
+origin=studip
 version=1
 StudipMinVersion=3.1

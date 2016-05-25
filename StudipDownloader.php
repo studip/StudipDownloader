@@ -3,11 +3,19 @@
 class StudipDownloader extends StudipPlugin implements SystemPlugin
 {
 
-    //private $svnurl = 'svn://develop.studip.de/studip';
-    //private $svncmd = 'svn --no-auth-cache --username studip --password studip ';
+    private $svnurl = 'svn://develop.studip.de/studip';
+    private $svncmd = 'svn --no-auth-cache --username studip --password studip ';
 
-    private $svnurl = 'file:///home/svn/studip';
-    private $svncmd = '/usr/bin/svn';
+    //private $svnurl = 'file:///home/svn/studip';
+    //private $svncmd = '/usr/bin/svn';
+
+    public function __construct()
+    {
+        parent::__construct();
+        $nav = new Navigation(_("Downloads"), PluginEngine::getURL($this, array(), "downloadarea/overview"));
+        $nav->setImage(Icon::create("download", "navigation"));
+        Navigation::addItem("/downloader", $nav);
+    }
 
     function perform($unconsumed_path) {
         try {
